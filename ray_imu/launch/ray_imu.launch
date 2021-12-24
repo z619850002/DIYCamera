@@ -1,0 +1,9 @@
+<launch>
+ <node pkg="ray_imu" type="ray_imu_node" name="ray_imu_node" required="true" output="screen" > 
+    <param name="port" value="/dev/ray_imu" />
+    <param name="imu_baudrate" value="115200" />
+    <param name="imu_frame_id" value="imu_link" />
+    <param name="imu_topic" value="imu" />
+ </node> 
+  <node pkg="tf" type="static_transform_publisher" name="imu_broadcaster" args="0.0 0.0 0.23 0 0 0 base_footprint imu_link 100" respawn="true" />
+</launch>

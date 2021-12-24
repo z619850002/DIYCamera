@@ -1,0 +1,4 @@
+<launch>
+  <include file="$(find ray_imu)/launch/ray_imu.launch" />
+  <include file="$(find astra_camera)/launch/astrapro.launch" />
+</launch>
